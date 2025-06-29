@@ -1,0 +1,3 @@
+[submodule "espidf_libs"]
+	path = espidf_libs
+	url = https://github.com/espressif/idf-extra-components.git
