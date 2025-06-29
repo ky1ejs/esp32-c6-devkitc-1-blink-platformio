@@ -1,3 +1,4 @@
+
 /* Blink Example
 
    This example code is in the Public Domain (or CC0 licensed, at your option.)
@@ -12,6 +13,7 @@
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "led_strip.h"
+
 #include "sdkconfig.h"
 
 static const char *TAG = "example";
@@ -19,7 +21,10 @@ static const char *TAG = "example";
 /* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
-#define BLINK_GPIO CONFIG_BLINK_GPIO
+#define BLINK_GPIO GPIO_NUM_8
+#define CONFIG_BLINK_LED_STRIP 1
+#define CONFIG_BLINK_LED_STRIP_BACKEND_RMT 1
+#define CONFIG_BLINK_PERIOD 1000 // Blink period in milliseconds
 
 static uint8_t s_led_state = 0;
 
