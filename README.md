@@ -25,3 +25,7 @@ I hit my head agains this problem for hours... until I found these two links on 
 
 
 [This reply here specfically](https://github.com/platformio/platform-espressif32/issues/1243#issuecomment-1836305435) said to point the platformio.ini platform option to a [specifc repo](https://github.com/tasmota/platform-espressif32/releases/). I did this, and it worked! I then reverted the platform field back to the default `espressif32` and it still worked. I'm not sure why it continued to work; I have two theories: either there's something cached on my machine now as a result of the first build, or the changes that using the other platform made to the sdkconfig fixed the set up... I have noticed that the default sdkconfig was asserting that the ESP32-C6 had 2MB of flash, but the ESP32-C6-DevKitC-1 has 8MB of flash... so maybe the default just has some things that are out of sync.
+
+# Arduino
+If you wanna get Arduino running, apparently something like this is the way:
+https://github.com/platformio/platform-espressif32/issues/1225#issuecomment-1977825930
